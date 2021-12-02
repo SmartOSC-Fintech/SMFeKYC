@@ -9,37 +9,37 @@ import MobileCoreServices
 import Swift
 import SystemConfiguration
 import UIKit
+public enum SMFError : Swift.String {
+  case livenessFailed
+  case transactionFailed
+  case initFailed
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SMFLanguage : Swift.String {
+  case english
+  case vietnamese
+  public typealias RawValue = Swift.String
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public class SMFeKYC {
   public struct Result {
     public let refTxnID: Swift.String?
     public let faceImage: UIKit.UIImage?
   }
-  public enum Error : Swift.String {
-    case livenessFailed
-    case transactionFailed
-    case initFailed
-    public typealias RawValue = Swift.String
-    public init?(rawValue: Swift.String)
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public enum Language : Swift.String {
-    case english
-    case vietnamese
-    public typealias RawValue = Swift.String
-    public init?(rawValue: Swift.String)
-    public var rawValue: Swift.String {
-      get
-    }
-  }
-  public init(endpoint: Swift.String, authorizationToken: Swift.String, customizedRefID: Swift.String? = nil, language: SMFeKYC.SMFeKYC.Language = .vietnamese)
-  public func startLiveness(from viewController: UIKit.UIViewController, success: @escaping (SMFeKYC.SMFeKYC.Result) -> Swift.Void, failure: @escaping (SMFeKYC.SMFeKYC.Error) -> Swift.Void)
+  public init(endpoint: Swift.String, authorizationToken: Swift.String, customizedRefID: Swift.String? = nil, language: SMFeKYC.SMFLanguage = .vietnamese)
+  public func startLiveness(from viewController: UIKit.UIViewController, success: @escaping (SMFeKYC.SMFeKYC.Result) -> Swift.Void, failure: @escaping (SMFeKYC.SMFError) -> Swift.Void)
   @objc deinit
 }
-extension SMFeKYC.SMFeKYC.Error : Swift.Equatable {}
-extension SMFeKYC.SMFeKYC.Error : Swift.Hashable {}
-extension SMFeKYC.SMFeKYC.Error : Swift.RawRepresentable {}
-extension SMFeKYC.SMFeKYC.Language : Swift.Equatable {}
-extension SMFeKYC.SMFeKYC.Language : Swift.Hashable {}
-extension SMFeKYC.SMFeKYC.Language : Swift.RawRepresentable {}
+extension SMFeKYC.SMFError : Swift.Equatable {}
+extension SMFeKYC.SMFError : Swift.Hashable {}
+extension SMFeKYC.SMFError : Swift.RawRepresentable {}
+extension SMFeKYC.SMFLanguage : Swift.Equatable {}
+extension SMFeKYC.SMFLanguage : Swift.Hashable {}
+extension SMFeKYC.SMFLanguage : Swift.RawRepresentable {}
