@@ -9,7 +9,7 @@ import MobileCoreServices
 import Swift
 import SystemConfiguration
 import UIKit
-public class SMFeKYC {
+public class SMFeKYCManager {
   public struct Result {
     public let refTxnID: Swift.String?
     public let faceImage: UIKit.UIImage?
@@ -33,13 +33,13 @@ public class SMFeKYC {
       get
     }
   }
-  public init(endpoint: Swift.String, authorizationToken: Swift.String, customizedRefID: Swift.String? = nil, language: SMFeKYC.SMFeKYC.Language = .vietnamese)
-  public func startLiveness(from viewController: UIKit.UIViewController, success: @escaping (SMFeKYC.SMFeKYC.Result) -> Swift.Void, failure: @escaping (SMFeKYC.SMFeKYC.Error) -> Swift.Void)
+  public init(endpoint: Swift.String, authorizationToken: Swift.String, customizedRefID: Swift.String? = nil, language: SMFeKYC.SMFeKYCManager.Language = .vietnamese)
+  public func startLiveness(from viewController: UIKit.UIViewController, success: @escaping (SMFeKYC.SMFeKYCManager.Result) -> Swift.Void, failure: @escaping (SMFeKYC.SMFeKYCManager.Error) -> Swift.Void)
   @objc deinit
 }
-extension SMFeKYC.SMFeKYC.Error : Swift.Equatable {}
-extension SMFeKYC.SMFeKYC.Error : Swift.Hashable {}
-extension SMFeKYC.SMFeKYC.Error : Swift.RawRepresentable {}
-extension SMFeKYC.SMFeKYC.Language : Swift.Equatable {}
-extension SMFeKYC.SMFeKYC.Language : Swift.Hashable {}
-extension SMFeKYC.SMFeKYC.Language : Swift.RawRepresentable {}
+extension SMFeKYC.SMFeKYCManager.Error : Swift.Equatable {}
+extension SMFeKYC.SMFeKYCManager.Error : Swift.Hashable {}
+extension SMFeKYC.SMFeKYCManager.Error : Swift.RawRepresentable {}
+extension SMFeKYC.SMFeKYCManager.Language : Swift.Equatable {}
+extension SMFeKYC.SMFeKYCManager.Language : Swift.Hashable {}
+extension SMFeKYC.SMFeKYCManager.Language : Swift.RawRepresentable {}
